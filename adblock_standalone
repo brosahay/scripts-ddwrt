@@ -1,0 +1,11 @@
+#!/bin/sh 
+mkdir /tmp/etc/config 
+cd /tmp/etc/config 
+sleep 30 
+wget -q http://winhelp2002.mvps.org/hosts.txt 
+sleep 2 
+cat hosts.txt | grep 127.0.0.1 >> /tmp/hosts
+stopservice dnsmasq 
+sleep 1 
+startservice dnsmasq 
+echo "Hosts UPDATED"
