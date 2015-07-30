@@ -1,0 +1,8 @@
+127.0.0.1	sidepage.co
+
+127.0.0.1	streamride.co
+
+127.0.0.1	ui.sidepage.co
+
+127.0.0.1	ui.streamride.co
+

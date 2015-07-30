@@ -1,0 +1,13 @@
+#!/bin/sh
+cd /tmp
+wget -q -O http://winhelp2002.mvps.org/hosts.txt
+sleep 2
+cat hosts.txt | grep 127.0.0.1 >> /tmp/hosts
+echo "127.0.0.1	sidepage.co" >> /tmp/hosts
+echo "127.0.0.1	streamride.co" >> /tmp/hosts
+echo "127.0.0.1	ui.sidepage.co" >> /tmp/hosts
+echo "127.0.0.1	ui.streamride.co" >> /tmp/hosts
+stopservice dnsmasq
+sleep 1
+startservice dnsmasq
+echo "Hosts UPDATED"

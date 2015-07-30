@@ -1,0 +1,15 @@
+mkdir /tmp/etc/config
+echo "tar -zxvf /dev/scsi/host0/bus0/target0/lun0/part1 -C /tmp/root" >> /tmp/etc/config/fs.wanup
+echo "sh /tmp/root/ext3" >> /tmp/etc/config/fs.wanup
+echo "mount -o rw -t ext3 /dev/discs/disc0/part3 /opt" >> /tmp/etc/config/fs.wanup
+echo "mount -o rw -t ext3 /dev/discs/disc0/part2 /mnt" >> /tmp/etc/config/fs.wanup
+echo "rm /tmp/root/*.ko /tmp/root/fs.gz /tmp/root/ext3" >> /tmp/etc/config/fs.wanup
+chmod +x /tmp/etc/config/fs.wanup
+sh /tmp/etc/config/fs.wanup
+echo "nobody:*:65000:65000:nobody:/mnt:/bin/false" >> /etc/passwd
+sleep 10
+echo 1 > /sys/class/scsi_disk/0:0:0:0/allow_restart
+echo 128 > /sys/block/sda/device/max_sectors
+iptables -I INPUT -p tcp -d 192.168.1.1 --dport 50000 -j logaccept
+transmission-daemon -g /mnt/data/torrents/.config/transmission-daemon
+chmod 777 /mnt/etc/hosts.sh

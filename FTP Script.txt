@@ -1,0 +1,14 @@
+#!/bin/sh
+USER=$1
+PASS=$2
+FTP=$3
+FTPPATH=$4
+
+ftp ${FTPPATH} <<EOF
+quote on
+user ${USER}
+user ${PASS}
+lcd /mnt/data
+cd ${FTPPATH}
+mget *
+EOF
