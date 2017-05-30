@@ -3,7 +3,7 @@
 * Open it in a hex editor. Look at offset 0x40-47.
 * There should be the following bytes: 08 41 00 08.(if the firmware was for N841v8)
 * Modify to: 09 41 00 05
-		<PRODUCT_ID> <HW_VERSION>
+......<PRODUCT_ID> <HW_VERSION>
 * Get:
 ..* [mktplinkfw.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/mktplinkfw.c)
 ..* [md5.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.c)
