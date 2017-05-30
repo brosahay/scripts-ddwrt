@@ -1,6 +1,6 @@
 ## dd-wrt or OpenWrt for similar tplink model
 * Download the custom firmware: <firmware>-factory.bin
-* Open it in a hex editor. Look at offset 0x40-47.
+* Open it in a hex editor. Look at offset `0x40-47`.
 * There should be the following bytes: `08 41 00 08` (if the firmware was for N841v8)
 * Modify to: `09 41 00 05` (if the hardware is N941v5)
 
@@ -18,7 +18,7 @@
 * Open the hex editor again, go to offset `0x4c`, and copy the MD5 above (it should span from offset `0x4c` to offset `0x5b`).
 * Go and upload the resulting file to firmware upgrade (in TP-Link web-interface).
 ---
-## RESTORE:
+## restore to stock firmware on tplink:
 * Download the original fw from tp-link site. [ONLY FOR UBOOT]
 
 Then do the following:
