@@ -1,4 +1,4 @@
-##DD-WRT or OPENWRT for similar TP-Link Models
+## DD-WRT or OPENWRT for similar TP-Link Models
 * Download the custom firmware: <firmware>-factory.bin (similar to N941v5)
 * Open it in a hex editor. Look at offset 0x40-47.
 * There should be the following bytes: 08 41 00 08.(if the firmware was for N841v8)
@@ -14,7 +14,7 @@
 * Open the hex editor again, go to offset 0x4c, and copy the MD5 above (it should span from offset 0x4c to offset 0x5b).
 * Go and upload the resulting file to firmware upgrade (in TP-Link web-interface).
 ---
-##RESTORE:
+## RESTORE:
 * Download the original fw from tp-link site. [ONLY FOR UBOOT]
 then do the following:
 * `$mv <fw_version>_up_boot(<version>).bin fw_original.bin`
