@@ -8,9 +8,9 @@
 
 * Get:
 
-   * [mktplinkfw.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/mktplinkfw.c)..
-   * [md5.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.c)..
-   * [md5.h](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.h)..
+   * [mktplinkfw.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/mktplinkfw.c)
+   * [md5.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.c)
+   * [md5.h](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.h)
 
 * Compile the tool: `gcc -Os mktplinkfw.c md5.c -o mktplinkfw`
 * Run: `./mktplinkfw -i *-factory.bin`
