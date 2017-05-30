@@ -15,11 +15,12 @@
 * Compile the tool: `gcc -Os mktplinkfw.c md5.c -o mktplinkfw`
 * Run: `./mktplinkfw -i *-factory.bin`
 * Look for the expected MD5Sum1: expected: `e5 67 34 4d 04 99 20 60 f5 76 c6 04 15 81 ab f8`
-* Open the hex editor again, go to offset 0x4c, and copy the MD5 above (it should span from offset 0x4c to offset 0x5b).
+* Open the hex editor again, go to offset `0x4c`, and copy the MD5 above (it should span from offset `0x4c` to offset `0x5b`).
 * Go and upload the resulting file to firmware upgrade (in TP-Link web-interface).
 ---
 ## RESTORE:
 * Download the original fw from tp-link site. [ONLY FOR UBOOT]
+
 Then do the following:
 
 ...$`mv <fw_version>_up_boot(<version>).bin fw_original.bin`..
