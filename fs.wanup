@@ -1,0 +1,9 @@
+#!/bin/sh
+mkdir /tmp/etc/config
+echo "tar -zxvf /dev/scsi/host0/bus0/target0/lun0/part1 -C /tmp/root" >> /tmp/etc/config/fs.wanup
+echo "sh /tmp/root/ext3" >> /tmp/etc/config/fs.wanup
+echo "mount -o rw -t ext3 /dev/discs/disc0/part3 /opt" >> /tmp/etc/config/fs.wanup
+echo "mount -o rw -t ext3 /dev/discs/disc0/part2 /mnt" >> /tmp/etc/config/fs.wanup
+echo "rm /tmp/root/*.ko /tmp/root/fs.gz /tmp/root/ext3" >> /tmp/etc/config/fs.wanup
+chmod +x /tmp/etc/config/fs.wanup
+sh /tmp/etc/config/fs.wanup
