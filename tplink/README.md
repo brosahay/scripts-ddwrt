@@ -4,13 +4,13 @@
 * There should be the following bytes: `08 41 00 08` (if the firmware was for N841v8)
 * Modify to: `09 41 00 05`
 
- ...`<PRODUCT_ID> <HW_VERSION>`
+     `<PRODUCT_ID> <HW_VERSION>`
 
 * Get:
 
- ... [mktplinkfw.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/mktplinkfw.c)..
- ... [md5.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.c)..
- ... [md5.h](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.h)..
+   * [mktplinkfw.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/mktplinkfw.c)..
+   * [md5.c](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.c)..
+   * [md5.h](https://raw.githubusercontent.com/revosftw/dd_wrt_scripts/master/tplink/md5.h)..
 
 * Compile the tool: `gcc -Os mktplinkfw.c md5.c -o mktplinkfw`
 * Run: `./mktplinkfw -i *-factory.bin`
@@ -23,11 +23,11 @@
 
 Then do the following:
 
- ... $`mv <fw_version>_up_boot(<version>).bin fw_original.bin`..
- ... $`dd if=fw_original.bin of=tplink_restore.bin skip=257 bs=512`..
- ... $`scp tplink_restore.bin fw.bin root@192.168.1.1:/tmp`..
- ... ssh/telnet to router: #`mtd -r write /tmp/tplink_restore.bin firmware`
+   * $`mv <fw_version>_up_boot(<version>).bin fw_original.bin`..
+   * $`dd if=fw_original.bin of=tplink_restore.bin skip=257 bs=512`..
+   * $`scp tplink_restore.bin fw.bin root@192.168.1.1:/tmp`..
+   * ssh/telnet to router: #`mtd -r write /tmp/tplink_restore.bin firmware`
 
 TESTED on TP-Link N941v5.
 
-CREDITS:DD-WRT and OPENWRT Forums.
+**CREDITS:** DD-WRT and OPENWRT Forums.
