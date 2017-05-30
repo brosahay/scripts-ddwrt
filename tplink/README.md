@@ -1,8 +1,8 @@
-## DD-WRT or OPENWRT for similar TP-Link Models
-* Download the custom firmware: <firmware>-factory.bin (similar to N941v5)
+## dd-wrt or OpenWrt for similar tplink model
+* Download the custom firmware: <firmware>-factory.bin
 * Open it in a hex editor. Look at offset 0x40-47.
 * There should be the following bytes: `08 41 00 08` (if the firmware was for N841v8)
-* Modify to: `09 41 00 05`
+* Modify to: `09 41 00 05` (if the hardware is N941v5)
 
      `<PRODUCT_ID> <HW_VERSION>`
 
@@ -23,11 +23,12 @@
 
 Then do the following:
 
-   * $`mv <fw_version>_up_boot(<version>).bin fw_original.bin`..
-   * $`dd if=fw_original.bin of=tplink_restore.bin skip=257 bs=512`..
-   * $`scp tplink_restore.bin fw.bin root@192.168.1.1:/tmp`..
-   * ssh/telnet to router: #`mtd -r write /tmp/tplink_restore.bin firmware`
+   * $`mv <fw_version>_up_boot(<version>).bin fw_original.bin`
+   * $`dd if=fw_original.bin of=tplink_restore.bin skip=257 bs=512`
+   * $`scp tplink_restore.bin fw.bin root@192.168.1.1:/tmp`
+   * SSH/telnet to the router:
+     #`mtd -r write /tmp/tplink_restore.bin firmware`
 
-TESTED on TP-Link N941v5.
+Tested on TP-Link N941v5.
 
-**CREDITS:** DD-WRT and OPENWRT Forums.
+**CREDITS:** [dd-wrt](http://www.dd-wrt.com/phpBB2/) and [OpenWrt](https://forum.openwrt.org/).
