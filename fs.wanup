@@ -1,4 +1,10 @@
 #!/bin/sh
+
+######################################################################
+#
+#  Copyright (c) 2017 revosftw (https://github.com/revosftw)
+#
+######################################################################
 mkdir /tmp/etc/config
 echo "tar -zxvf /dev/scsi/host0/bus0/target0/lun0/part1 -C /tmp/root" >> /tmp/etc/config/fs.wanup
 echo "sh /tmp/root/ext3" >> /tmp/etc/config/fs.wanup
